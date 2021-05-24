@@ -50,7 +50,6 @@ The machines on the internal network are not exposed to the public Internet.
 Only the Jump-Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: <my-home-public-ip-address>
 
 Machines within the network can only be accessed by the Jump-Box VM: VNET IP: 10.0.0.6
-
 The Jump-Box can as well access the ELK VM with its IP address: 10.0.0.6
 
 
@@ -155,7 +154,7 @@ These Beats allow us to collect the following information from each machine:
 •	Filebeat monitors and collects event logs from the vulnerable VMs and then forwards them to Elasticsearch or Logstash for indexing. An example of such are the logs produced from the MySQL database supporting our application.
 •	Metricbeat monitors and collects metrics from the system and services running on the servers. An example of such is cpu usage, which can be used to monitor the system health.
 
-Using the Playbook
+**Using the Playbook**
 
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
