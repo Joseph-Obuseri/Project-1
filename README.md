@@ -135,18 +135,21 @@ The playbook implements the following tasks:
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 https://user-images.githubusercontent.com/84531383/119416855-2bd12d80-bcba-11eb-921e-6f4557521839.PNG
-<img src="C:\Users\joebu\Desktop\Ubuntu Shared Folder\image.png">
+
+![](image/screenshot.png)
     
 Target Machines & Beats
 
 This ELK server is configured to monitor the following machines:
 
 •	WEB-1: 10.0.0.4
+    
 •	WEB-2: 10.0.0.5
 
 We have installed the following Beats on these machines:
 
 •	Filebeat
+    
 •	Metricbeat
 
 These Beats allow us to collect the following information from each machine:
@@ -173,8 +176,11 @@ SSH into the control node and follow the steps below:
 Command to run to download an ansible playbook:
 
 •	ansible-playbook <name_of_playbook_file>
+    
 •	ansible-playbook ansible-playbook.yml
 
 Command to run to update the file:
+    
 •	nano <name_of_playbook_file>
+    
 •	nano ansible-playbook.yml
