@@ -1,16 +1,24 @@
 # Project-1
 
+
 ***Automated ELK Stack Deployment***
 
 The files in this repository were used to configure the network depicted below. These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the filebeat-playbook.yml file may be used to install only certain pieces of it, such as the DVWA containers.
 
 •	ansible-config.yml
+
 •	elk-install.yml
+
 •	filebeat-config.yml
+
 •	filebeat-playbook.yml
+
 •	hosts-config.yml
+
 •	metricbeat-config.yml
+
 •	metricbeat-playbook.yml
+
 
 This document contains the following details:
 
@@ -20,6 +28,7 @@ This document contains the following details:
   -	Beats in Use
   -	Machines Being Monitored
 •	How to Use the Ansible Build
+
 
 **Description of the Topology**
 
@@ -41,6 +50,7 @@ The configuration details of each machine may be found below.
 | DVWA WEB-1  | Server    | 10.0.0.4   | Linux            |
 | DVWA WEB-2  | Server    | 10.0.0.5   | Linux            |
 | ELK-Server  | Log Server| 10.1.0.4   | Linux            |
+
 
 
 **Access Policies**
@@ -155,7 +165,8 @@ These Beats allow us to collect the following information from each machine:
 •	Filebeat monitors and collects event logs from the vulnerable VMs and then forwards them to Elasticsearch or Logstash for indexing. An example of such are the logs produced from the MySQL database supporting our application.
 •	Metricbeat monitors and collects metrics from the system and services running on the servers. An example of such is cpu usage, which can be used to monitor the system health.
 
-**Using the Playbook**
+
+  **Using the Playbook**
 
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
