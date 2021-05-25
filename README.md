@@ -23,11 +23,17 @@ The files in this repository were used to configure the network depicted below. 
 This document contains the following details:
 
 •	Description of the topology
+
 •	Access Policies
+
 •	ELK Configuration
+
   -	Beats in Use
+  
   -	Machines Being Monitored
+  
 •	How to Use the Ansible Build
+
 
 
 **Description of the Topology**
@@ -53,6 +59,7 @@ The configuration details of each machine may be found below.
 
 
 
+
 **Access Policies**
 
 The machines on the internal network are not exposed to the public Internet. 
@@ -74,11 +81,13 @@ A summary of the access policies in place can be found in the table below.
 | Load Balancer| Yes                 | Open                          |
 
 
+  
 **Elk Configuration**
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it allows for the setting up of multiple containers with little effort. It also allows for a quick set up should the virtual network goes down, adding to the redundancy.
 
 The playbook implements the following tasks:
+  
 
 •	Installs docker.io, python3-pip, and install docker module.
 
@@ -141,9 +150,11 @@ The playbook implements the following tasks:
         name: docker
         enabled: yes- _
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+
+  The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 ![screenshot](https://user-images.githubusercontent.com/84531383/119436747-68188400-bce2-11eb-8c66-3cda62199b30.PNG)
+
 
 
 **Target Machines & Beats**
@@ -160,33 +171,44 @@ We have installed the following Beats on these machines:
     
 •	Metricbeat
 
+
 These Beats allow us to collect the following information from each machine:
 
 •	Filebeat monitors and collects event logs from the vulnerable VMs and then forwards them to Elasticsearch or Logstash for indexing. An example of such are the logs produced from the MySQL database supporting our application.
 •	Metricbeat monitors and collects metrics from the system and services running on the servers. An example of such is cpu usage, which can be used to monitor the system health.
 
 
-  **Using the Playbook**
+  
+**Using the Playbook**
 
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
 
 •	Copy the configuration file to your ansible container.
+  
 •	Update the /etc/ansible/hosts file to include the webservers and the ELK server so ansible can discover and connect to them.
+  
 •	Run the playbook, and navigate to http://[elk_public_ip_address]:5601/app/kibana to check that the installation worked as expected.
 
-•	Which file is the playbook? filebeat-config.yml 
+•	Which file is the playbook? filebeat-config.yml
+  
 •	Where do you copy it? src: /etc/ansible/files/filebeat-config.yml dest: /etc/filebeat/filebeat.yml
-•	Which file do you update to make Ansible run the playbook on a specific machine? /etc/ansible/hosts/ file.                      
+  
+•	Which file do you update to make Ansible run the playbook on a specific machine? /etc/ansible/hosts/ file.  
+  
 •	How do I specify which machine to install the ELK server on versus which to install Filebeat on? By adding elk and webservers IP addresses and selecting which group you want them to run on.
+  
+  
 •	Which URL do you navigate to in order to check that the ELK server is running? http://[elk_public_ip_address]:5601/app/kibana
+
 
 Command to run to download an ansible playbook:
 
 •	ansible-playbook <name_of_playbook_file>
     
 •	ansible-playbook ansible-playbook.yml
+
 
 Command to run to update the file:
     
