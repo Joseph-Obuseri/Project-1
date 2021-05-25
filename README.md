@@ -1,6 +1,6 @@
 # Project-1
 
-Automated ELK Stack Deployment
+***Automated ELK Stack Deployment***
 
 The files in this repository were used to configure the network depicted below. These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the filebeat-playbook.yml file may be used to install only certain pieces of it, such as the DVWA containers.
 
@@ -17,12 +17,11 @@ This document contains the following details:
 •	Description of the topology
 •	Access Policies
 •	ELK Configuration
-	Beats in Use
-	Machines Being Monitored
+  -	Beats in Use
+  -	Machines Being Monitored
 •	How to Use the Ansible Build
 
-
-Description of the Topology
+**Description of the Topology**
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
@@ -44,7 +43,7 @@ The configuration details of each machine may be found below.
 | ELK-Server  | Log Server| 10.1.0.4   | Linux            |
 
 
-Access Policies
+**Access Policies**
 
 The machines on the internal network are not exposed to the public Internet. 
 Only the Jump-Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: <my-home-public-ip-address>
@@ -65,7 +64,7 @@ A summary of the access policies in place can be found in the table below.
 | Load Balancer| Yes                 | Open                          |
 
 
-Elk Configuration
+**Elk Configuration**
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it allows for the setting up of multiple containers with little effort. It also allows for a quick set up should the virtual network goes down, adding to the redundancy.
 
@@ -134,11 +133,10 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-https://user-images.githubusercontent.com/84531383/119416855-2bd12d80-bcba-11eb-921e-6f4557521839.PNG
+![screenshot](https://user-images.githubusercontent.com/84531383/119436747-68188400-bce2-11eb-8c66-3cda62199b30.PNG)
 
-![](image/screenshot.png)
-    
-Target Machines & Beats
+
+**Target Machines & Beats**
 
 This ELK server is configured to monitor the following machines:
 
