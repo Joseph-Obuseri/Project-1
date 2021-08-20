@@ -1,0 +1,40 @@
+Metricbeat Playbook
+
+metricbeat-playbook.yml
+
+---
+- name: installing and launching metricbeat
+  hosts: webservers
+  become: yes
+  tasks:
+
+  # Download .deb file from artifacts.elastic.co
+  - name: download metricbeat deb
+    command: curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.4.0-amd64.deb
+
+  # Install .deb file using dpkg
+  - name: install metric deb
+    command: dpkg -i metricbeat-7.4.0-amd64.deb
+
+  # Copy metricbeat config file to remote server
+  - name: drop in metricbeat.yml
+    copy:
+      src: /etc/ansible/files/metricbeat-config.yml
+      dest: /etc/metricbeat/metricbeat.yml
+
+  - name: enable and configure system module
+    command: metricbeat modules enable docker
+
+  # Run metricbeat setup command
+  - name: setup metricbeat
+    command: metricbeat setup
+
+  # Start the metricbeat service
+  - name: start metricbeat service
+    command: service metricbeat start
+
+  # Use systemd module to start metricbeat on startup
+  - name: enable service metricbeat on startup
+    systemd:
+      name: metricbeat
+      enabled: yes
